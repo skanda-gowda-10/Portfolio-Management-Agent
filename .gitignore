@@ -4,3 +4,32 @@ dist
 .mastra
 *.db
 *.db-*
+.env
+.env.local
+.env.docker
+
+# Test files (development only)
+test-*.js
+test-*.json
+test_*.json
+comprehensive-test-*.js
+comprehensive-test-*.json
+direct-test.ts
+console.log*
+MANUAL_TEST_CASES.md
+
+# Build artifacts
+build/
+*.tsbuildinfo
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
