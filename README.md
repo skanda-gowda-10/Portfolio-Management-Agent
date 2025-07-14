@@ -1,69 +1,65 @@
 # 🚀 AI Portfolio Management Agent
 
-[![Nosana Challenge](https://img.shields.io/badge/Nosana-Builders%20Challenge-blue)](https://discord.gg/nosana-ai)
 [![Mastra Framework](https://img.shields.io/badge/Built%20with-Mastra-green)](https://mastra.ai)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://hub.docker.com/r/skanda1/nosana-portfolio-agent)
+[![Node.js](https://img.shields.io/badge/Node.js-20.9%2B-green)](https://nodejs.org/)
 
-An advanced AI-powered portfolio management assistant built for the **Nosana Builders Challenge**. This agent provides real-time market analysis, portfolio optimization, and intelligent investment insights using natural language processing.
+An intelligent AI-powered portfolio management assistant that provides comprehensive investment analysis, real-time market data, and advanced portfolio optimization capabilities through natural language conversations.
 
 ![Portfolio Agent Demo](./assets/NosanaBuildersChallengeAgents.jpg)
 
-## 🎯 Challenge Entry
+## 🎯 What This Agent Does
 
-**Challenge Level**: Advanced  
-**Category**: AI Agent with Real-World Utility  
-**Deployment**: Nosana Decentralized GPU Network  
-**Docker Hub**: [`skanda1/nosana-portfolio-agent`](https://hub.docker.com/r/skanda1/nosana-portfolio-agent)
+The Portfolio Management Agent is a sophisticated AI assistant designed to help investors make informed decisions about their portfolios. It combines real-time market data, advanced financial analytics, and conversational AI to provide personalized investment insights and recommendations.
 
-## ✨ Features
+## ✨ Core Capabilities
 
-### 🔴 **Real-Time Market Data**
+### 📊 **Real-Time Market Analysis**
+- **Live Stock Prices**: Fetches current market data for any publicly traded stock
+- **Price Change Tracking**: Shows percentage gains/losses and absolute price movements
+- **Multi-Stock Queries**: Analyze multiple stocks simultaneously
+- **Market Data Integration**: Uses Yahoo Finance for reliable, up-to-date information
 
-- Live stock price tracking via Yahoo Finance integration
-- Support for major stocks (AAPL, MSFT, GOOGL, TSLA, etc.)
-- Real-time market data retrieval with error handling
-
-### 📊 **Advanced Portfolio Analysis**
-
-- Comprehensive portfolio performance metrics
-- Current value vs. cost basis analysis
-- Gain/loss calculations with percentage returns
-- Diversification analysis across holdings
+### 💼 **Portfolio Performance Analysis**
+- **Current Value Calculation**: Automatically calculates your portfolio's current worth
+- **Gain/Loss Analysis**: Shows profit/loss for each holding and overall portfolio
+- **Cost Basis Tracking**: Remembers your original purchase prices and quantities
+- **Performance Metrics**: Provides detailed breakdown of investment performance
+- **Diversification Analysis**: Evaluates how well-distributed your investments are
 
 ### 📈 **Benchmark Comparison**
+- **S&P 500 Comparison**: Compare your portfolio performance against the market
+- **Multiple Index Tracking**: Benchmark against NASDAQ, DOW, and other major indices
+- **Relative Performance**: See if you're outperforming or underperforming the market
+- **Historical Analysis**: Track performance over different time periods
+- **Risk-Adjusted Returns**: Evaluate performance considering risk factors
 
-- Performance comparison against S&P 500
-- Major market indices comparison (NASDAQ, DOW)
-- Historical performance analysis
-- Risk-adjusted return metrics
-
-### 🎯 **Portfolio Optimization**
-
-- Monte Carlo simulation for risk analysis
-- Efficient frontier calculation
-- Risk-return optimization
-- Rebalancing recommendations
+### 🎯 **Advanced Portfolio Optimization**
+- **Monte Carlo Simulation**: Run thousands of scenarios to predict portfolio outcomes
+- **Efficient Frontier Analysis**: Find optimal risk-return combinations
+- **Rebalancing Recommendations**: Suggests adjustments to improve portfolio performance
+- **Risk Assessment**: Analyze volatility and potential downside risk
+- **Expected Return Calculations**: Project future portfolio performance
 
 ### 🧠 **Natural Language Interface**
+- **Conversational Input**: Describe your portfolio in plain English
+- **Automatic Parsing**: Converts natural language to structured data
+- **Context Awareness**: Remembers previous conversations and preferences
+- **Smart Symbol Recognition**: Converts company names to stock symbols automatically
+- **Flexible Input Formats**: Accepts various ways of describing investments
 
-- Conversational portfolio management
-- Automatic parsing of natural language inputs
-- Context-aware responses
-- Memory system for personalized recommendations
+### 💾 **Persistent Memory System**
+- **User Preferences**: Remembers your risk tolerance and investment goals
+- **Portfolio History**: Tracks changes to your holdings over time
+- **Conversation Context**: Maintains context across multiple sessions
+- **Personalized Recommendations**: Tailors advice based on your specific situation
 
-### 💾 **Persistent Memory**
-
-- LibSQL database for user preferences
-- Historical conversation tracking
-- Personalized investment insights
-- Long-term goal tracking
-
-## 🏗️ Architecture
+## 🏗️ Technical Architecture
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Mastra Core   │    │  Portfolio      │    │  Yahoo Finance  │
-│   Framework     │◄──►│  Agent          │◄──►│  API            │
+│   User Input    │    │  Portfolio      │    │  Yahoo Finance  │
+│  (Natural Lang) │◄──►│  Agent          │◄──►│  Market Data    │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          ▼                       ▼                       ▼
@@ -73,206 +69,242 @@ An advanced AI-powered portfolio management assistant built for the **Nosana Bui
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-## 🚀 Quick Start
+### **Core Components:**
+- **Mastra AI Framework**: Handles agent orchestration and tool calling
+- **Qwen 2.5 LLM**: Provides natural language understanding and generation
+- **LibSQL Database**: Stores user preferences and conversation history
+- **Yahoo Finance API**: Sources real-time market data
+- **Monte Carlo Engine**: Performs complex financial simulations
+
+## 💡 Detailed Usage Examples
+
+### Portfolio Analysis Workflow
+```
+User: "I own 100 Apple shares bought at $150 each, 50 Microsoft shares at $300 each, and 25 Google shares at $120 each"
+
+Agent Response:
+📊 Portfolio Analysis Complete!
+
+Current Holdings:
+• AAPL: 100 shares @ $191.45 each = $19,145 (was $15,000, +$4,145 or +27.6%)
+• MSFT: 50 shares @ $378.20 each = $18,910 (was $15,000, +$3,910 or +26.1%)  
+• GOOGL: 25 shares @ $138.75 each = $3,469 (was $3,000, +$469 or +15.6%)
+
+Portfolio Summary:
+💰 Total Value: $41,524
+📈 Total Gain: $8,524 (+25.8%)
+💵 Original Investment: $33,000
+
+Top Performer: Apple (+27.6%)
+Diversification: Good across tech sector
+```
+
+### Real-Time Price Queries
+```
+User: "What are the current prices for Apple, Tesla, and Amazon?"
+
+Agent Response:
+📈 Real-Time Stock Prices:
+
+🍎 AAPL (Apple Inc.)
+• Current: $191.45
+• Change: +$3.20 (+1.70%)
+• Day Range: $188.10 - $192.50
+
+🚗 TSLA (Tesla Inc.)
+• Current: $248.20
+• Change: -$3.15 (-1.25%)
+• Day Range: $245.80 - $251.40
+
+📦 AMZN (Amazon.com Inc.)
+• Current: $178.90
+• Change: +$2.45 (+1.39%)
+• Day Range: $176.20 - $179.50
+
+Last Updated: 2025-01-14 14:30:25 EST
+```
+
+### Benchmark Comparison Analysis
+```
+User: "How is my portfolio performing compared to the S&P 500?"
+
+Agent Response:
+📊 Benchmark Performance Comparison
+
+Your Portfolio vs Market:
+📈 Your Portfolio: +25.8% (YTD)
+📊 S&P 500 (SPY): +18.2% (YTD)
+🎯 Outperformance: +7.6%
+
+Performance Breakdown:
+• Tech Sector Allocation: 100% (vs 28% in S&P 500)
+• Risk Level: Higher (concentrated in tech)
+• Correlation with Market: 0.85 (high)
+
+Recommendation: Consider diversification into other sectors to reduce risk while maintaining strong returns.
+```
+
+### Portfolio Optimization Results
+```
+User: "Optimize my portfolio using Monte Carlo simulation"
+
+Agent Response:
+🎯 Monte Carlo Portfolio Optimization Results
+(Based on 10,000 simulations)
+
+Current Allocation:
+• AAPL: 46.1% ($19,145)
+• MSFT: 45.5% ($18,910)
+• GOOGL: 8.4% ($3,469)
+
+Optimized Allocation (for current risk level):
+• AAPL: 35% (-11.1%)
+• MSFT: 40% (-5.5%)
+• GOOGL: 25% (+16.6%)
+
+Expected Outcomes (1 Year):
+📈 Expected Return: 12.8% (vs 11.2% current)
+📊 Volatility: 22.1% (vs 24.3% current)
+🎯 Sharpe Ratio: 0.58 (vs 0.46 current)
+
+Recommendation: Increase Google allocation and reduce Apple concentration for better risk-adjusted returns.
+```
+
+## 🛠️ Technology Stack
+
+### **AI & Language Processing**
+- **Framework**: Mastra AI Framework for agent orchestration
+- **LLM**: Qwen 2.5:1.5b for natural language understanding
+- **Memory**: LibSQL for persistent conversation storage
+- **NLP**: Advanced natural language parsing for portfolio inputs
+
+### **Financial Data & Analysis**
+- **Market Data**: Yahoo Finance API integration
+- **Optimization**: Custom Monte Carlo simulation engine
+- **Analytics**: Statistical analysis and performance metrics
+- **Benchmarking**: Real-time index comparison capabilities
+
+### **Infrastructure**
+- **Runtime**: Node.js 20.9+ with TypeScript
+- **Container**: Docker with Ollama base image
+- **Database**: LibSQL for memory persistence
+- **API**: RESTful endpoints for external integrations
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
 - Node.js 20.9.0 or higher
 - pnpm (recommended) or npm
-- Docker (for containerization)
+- Docker (optional, for containerization)
 
-### Local Development
+### Installation
 
 1. **Clone the repository**
-
 ```bash
 git clone https://github.com/skanda-gowda-10/Portfolio-Management-Agent.git
 cd Portfolio-Management-Agent
 ```
 
 2. **Install dependencies**
-
 ```bash
 pnpm install
 ```
 
-3. **Set up environment variables**
-
+3. **Configure environment**
 ```bash
-# Copy environment template
 cp .env.example .env
-
-# Edit .env with your configuration
-MODEL_NAME_AT_ENDPOINT=qwen2.5:1.5b
-API_BASE_URL=http://127.0.0.1:11434/api
+# Edit .env with your settings
 ```
 
-4. **Start development server**
-
+4. **Start the agent**
 ```bash
 pnpm run dev
 ```
 
-5. **Access the agent**
-   Open your browser and navigate to `http://localhost:4111`
+5. **Access the interface**
+Open your browser to `http://localhost:4111`
 
-### Docker Deployment
+## 📖 Usage Guide
 
-1. **Build the container**
+### Basic Portfolio Input
+Simply describe your holdings in natural language:
+- "I have 100 shares of Apple at $150 each"
+- "My portfolio includes 50 Microsoft stocks bought at $300"
+- "I own AAPL, MSFT, and GOOGL stocks"
 
+### Analysis Commands
+- **Current Prices**: "What's Apple's current price?"
+- **Portfolio Analysis**: "Analyze my portfolio performance"
+- **Benchmark Comparison**: "Compare my portfolio to the S&P 500"
+- **Optimization**: "Optimize my portfolio allocation"
+
+### Advanced Features
+- **Risk Assessment**: "What's my portfolio's risk level?"
+- **Diversification Analysis**: "How well diversified am I?"
+- **Rebalancing**: "Should I rebalance my portfolio?"
+- **Future Projections**: "What are my expected returns?"
+
+## 🔧 Configuration
+
+### Environment Variables
 ```bash
-docker build -t skanda1/nosana-portfolio-agent:latest .
+# LLM Configuration
+MODEL_NAME_AT_ENDPOINT=qwen2.5:1.5b
+API_BASE_URL=http://127.0.0.1:11434/api
+
+# Database
+DATABASE_URL=file:./memory.db
+
+# Optional: Development settings
+DEV_PORT=4111
+DEBUG=true
 ```
 
-2. **Run locally**
+## 📊 Features in Detail
 
-```bash
-docker run -p 8080:8080 skanda1/nosana-portfolio-agent:latest
-```
+### **Natural Language Processing**
+The agent understands various ways of describing investments:
+- Company names → Stock symbols (Apple → AAPL)
+- Different quantity formats (100 shares, 100 stocks)
+- Price formats ($150, $150.00, 150 dollars)
+- Mixed input styles in single conversations
 
-3. **Access at** `http://localhost:8080`
+### **Memory & Context**
+- Remembers your portfolio across sessions
+- Tracks conversation history
+- Learns your preferences and risk tolerance
+- Provides personalized recommendations
 
-## 💡 Usage Examples
+### **Real-Time Data Integration**
+- Live market data from Yahoo Finance
+- Automatic price updates
+- After-hours trading information
+- Historical price data for analysis
 
-### Portfolio Analysis
-
-```
-User: "I own 100 Apple shares at $150 each and 50 Microsoft shares at $300 each"
-Agent: Automatically analyzes your portfolio, showing current values, gains/losses, and diversification metrics
-```
-
-### Real-time Prices
-
-```
-User: "What's the current price of Apple and Tesla?"
-Agent: Fetches live prices: AAPL: $191.45 (+2.1%), TSLA: $248.20 (-1.3%)
-```
-
-### Benchmark Comparison
-
-```
-User: "How does my portfolio compare to the S&P 500?"
-Agent: Your portfolio: +15.2% vs S&P 500: +12.8% (outperforming by 2.4%)
-```
-
-### Portfolio Optimization
-
-```
-User: "Optimize my portfolio using Monte Carlo simulation"
-Agent: Runs 10,000 simulations, suggests optimal allocation for your risk tolerance
-```
-
-## 🛠️ Technology Stack
-
-- **Framework**: [Mastra AI Framework](https://mastra.ai)
-- **LLM**: Qwen 2.5:1.5b (via Ollama)
-- **Memory**: LibSQL Database
-- **APIs**: Yahoo Finance (via unofficial API)
-- **Container**: Docker with Ollama base image
-- **Deployment**: Nosana Decentralized GPU Network
-
-## 📁 Project Structure
-
-```
-src/
-├── mastra/
-│   ├── agents/
-│   │   └── portfolio-agent/
-│   │       ├── agent.ts              # Main agent configuration
-│   │       ├── tools/
-│   │       │   ├── portfolio-analyzer.ts    # Portfolio analysis tool
-│   │       │   ├── real-time-prices.ts      # Price fetching tool
-│   │       │   ├── portfolio-optimizer.ts   # Optimization tool
-│   │       │   └── benchmark-comparison.ts  # Benchmark tool
-│   │       └── types/
-│   │           └── portfolio-types.ts       # TypeScript types
-│   ├── config.ts                    # Mastra configuration
-│   └── index.ts                     # Main entry point
-├── nos_job_def/
-│   └── nosana_mastra.json          # Nosana deployment config
-├── Dockerfile                       # Container configuration
-└── package.json                     # Dependencies and scripts
-```
-
-## 🎬 Demo Video
-
-[**Watch the Portfolio Agent in Action**](YOUR_VIDEO_LINK_HERE)
-
-Features demonstrated:
-
-- Natural language portfolio input
-- Real-time price fetching
-- Portfolio analysis and metrics
-- Benchmark comparison
-- Monte Carlo optimization
-- Cross-device access capability
-
-## 🚀 Nosana Deployment
-
-### Automated Deployment
-
-Run the deployment script:
-
-```bash
-./deploy.bat
-```
-
-### Manual Deployment
-
-1. Update Docker image in `nos_job_def/nosana_mastra.json`
-2. Push to Docker Hub: `docker push skanda1/nosana-portfolio-agent:latest`
-3. Deploy via [Nosana Dashboard](https://dashboard.nosana.com/deploy)
-
-### Live Demo
-
-**Deployed URL**: [Your Nosana deployment URL here]
-
-## 🏆 Challenge Submission
-
-This project demonstrates:
-
-- ✅ **Innovation**: Advanced portfolio management with AI
-- ✅ **Technical Implementation**: Mastra framework, real-time APIs, optimization algorithms
-- ✅ **Nosana Integration**: Successfully deployed on decentralized GPU network
-- ✅ **Real-World Impact**: Practical financial analysis and investment optimization
-
-### Challenge Requirements Met
-
-- [x] Fork from nosana-ai/agent-challenge
-- [x] Custom AI agent with tool-calling capabilities
-- [x] Docker container published to Docker Hub
-- [x] Successful deployment on Nosana network
-- [x] Comprehensive documentation
-- [x] Demo video showcasing functionality
-- [x] Social media post with required tags
+### **Advanced Analytics**
+- Monte Carlo simulations with 10,000+ iterations
+- Efficient frontier calculations
+- Risk-return optimization
+- Portfolio correlation analysis
+- Sharpe ratio and other performance metrics
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/new-analysis-tool`)
+3. Commit your changes (`git commit -m 'Add new analysis feature'`)
+4. Push to the branch (`git push origin feature/new-analysis-tool`)
 5. Open a Pull Request
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🙏 Acknowledgments
-
-- [Nosana](https://nosana.io) for the Builders Challenge
-- [Mastra](https://mastra.ai) for the excellent AI framework
-- [Ollama](https://ollama.ai) for local LLM support
-- Yahoo Finance for market data
-
 ## 📞 Support
 
-- **Discord**: [Nosana Community](https://discord.gg/nosana-ai)
-- **Documentation**: [Mastra Docs](https://mastra.ai/docs)
 - **Issues**: [GitHub Issues](https://github.com/skanda-gowda-10/Portfolio-Management-Agent/issues)
+- **Documentation**: [Mastra Docs](https://mastra.ai/docs)
 
 ---
 
-**Built with ❤️ for the Nosana Builders Challenge**
-
-_Showcasing the power of AI agents on decentralized infrastructure_
+**Built for intelligent investment management through conversational AI**
