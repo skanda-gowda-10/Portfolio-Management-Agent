@@ -6,7 +6,6 @@
 
 An intelligent AI-powered portfolio management assistant that provides comprehensive investment analysis, real-time market data, and advanced portfolio optimization capabilities through natural language conversations.
 
-![Portfolio Agent Demo](./assets/NosanaBuildersChallengeAgents.jpg)
 
 ## 🎯 What This Agent Does
 
